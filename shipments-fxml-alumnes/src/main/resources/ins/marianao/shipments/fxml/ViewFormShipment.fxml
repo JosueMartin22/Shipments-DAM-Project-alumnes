@@ -40,47 +40,47 @@
                   <Label styleClass="title" text="%fxml.text.formShipment.title" GridPane.columnIndex="1" />
                   <HBox spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <ComboBox fx:id="cmbRole" disable="true" minWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="cmbCategory" disable="true" minWidth="200.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label text="%fxml.text.formUser.username.lbl">
+                        <Label text="%fxml.text.formShipment.sender.lbl">
                            <styleClass>
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="txtSender" disable="true" editable="false" promptText="%fxml.text.formUser.username" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfSender" disable="true" editable="false" promptText="%fxml.text.formShipment.sender.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <children>
-                        <Label text="%fxml.text.formUser.username.lbl">
+                        <Label text="%fxml.text.formShipment.recipient.lbl">
                            <styleClass>
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="txtRecipient" disable="true" editable="false" promptText="%fxml.text.formUser.username" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfRecipient" disable="true" editable="false" promptText="%fxml.text.formShipment.reciever.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <Label text="%fxml.text.formUser.password.lbl">
+                        <Label text="%fxml.text.formShipment.weight.lbl">
                            <styleClass>
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="txtWeight" disable="true" editable="false" promptText="%fxml.text.formUser.username" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfWeight" disable="true" editable="false" promptText="%fxml.text.formShipment.weight.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <children>
-                        <Label text="%fxml.text.formUser.password.lbl">
+                        <Label text="%fxml.text.formShipment.height.lbl">
                            <styleClass>
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="txtHeight" disable="true" editable="false" promptText="%fxml.text.formUser.username" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfHeight" disable="true" editable="false" promptText="%fxml.text.formShipment.height.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -90,7 +90,7 @@
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="txtWidth" disable="true" editable="false" promptText="%fxml.text.formUser.username" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfWidth" disable="true" editable="false" promptText="%fxml.text.formUser.username" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="4">
@@ -100,7 +100,7 @@
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="txtLength" disable="true" editable="false" promptText="%fxml.text.formUser.username" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfLength" disable="true" editable="false" promptText="%fxml.text.formUser.username" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="5">
@@ -115,10 +115,10 @@
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
                      <children>
-                        <TextArea prefHeight="200.0" prefWidth="515.0" />
+                        <TextArea fx:id="taNote" prefHeight="200.0" prefWidth="515.0" />
                      </children>
 				  </HBox>
-      			<Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveProfileClick" styleClass="button-fullwidth" text="%fxml.text.formUser.submit" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+      			<Button fx:id="bSave" mnemonicParsing="false" onAction="#saveProfileClick" styleClass="button-fullwidth" text="%fxml.text.formUser.submit" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
                </children>
             </GridPane>
 			</children>
