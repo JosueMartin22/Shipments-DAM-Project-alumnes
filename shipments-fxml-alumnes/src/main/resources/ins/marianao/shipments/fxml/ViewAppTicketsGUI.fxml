@@ -34,7 +34,7 @@
         </Menu>
             <Menu fx:id="mnShipments" mnemonicParsing="true" text="%fxml.text.menu.shipments">
               <items>
-                <MenuItem fx:id="mnItReception" disable="true" mnemonicParsing="false" onAction="#receptionMenuClick" text="%fxml.text.menu.shipments.new">
+                <MenuItem fx:id="mnItReception" mnemonicParsing="false" onAction="#receptionMenuClick" text="%fxml.text.menu.shipments.new">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>

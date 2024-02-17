@@ -178,18 +178,16 @@ public class ControllerMenu implements Initializable {
 	 *
 	 * @param event the action event.
 	 */
+	
 	@FXML
 	public void shipmentsMenuClick(ActionEvent event) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewFormShipment.fxml"),
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewShipments.fxml"),
 					ResourceManager.getInstance().getTranslationBundle());
 			BorderPane vista = (BorderPane) loader.load();
 
-			ControllerFormShipment controllerFormShipment = loader.getController();
-
 			this.loadView(vista);
 		} catch (Exception e) {
-			e.printStackTrace();
 			ControllerMenu.showError(ResourceManager.getInstance().getText("error.menu.view.opening"), e.getMessage(),
 					ExceptionUtils.getStackTrace(e));
 		}
@@ -432,12 +430,11 @@ public class ControllerMenu implements Initializable {
 	}
 
 	private void openShipmentForm() {
+		
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewFormShipment.fxml"),
 					ResourceManager.getInstance().getTranslationBundle());
 			BorderPane vista = (BorderPane) loader.load();
-
-			ControllerFormShipment controllerFormEnviament = loader.getController();
 
 			this.loadView(vista);
 		} catch (Exception e) {

@@ -64,21 +64,21 @@ public class ControllerFormShipment implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
 
-		List<Pair<String, String>> categories = Stream.of(Shipment.Category.values())
-				.map(new Function<Category, Pair<String, String>>() {
-					@Override
-					public Pair<String, String> apply(Category t) {
-						String key = t.name();
-						return new Pair<String, String>(key, resource.getString("text.Shipment." + key));
-					}
-
-				}).collect(Collectors.toList());
-
-		setCmFormat(tfHeigth);
-		setCmFormat(tfLength);
-		setCmFormat(tfWidth);
-
-		setGFormat(tfWeigth);
+//		List<Pair<String, String>> categories = Stream.of(Shipment.Category.values())
+//				.map(new Function<Category, Pair<String, String>>() {
+//					@Override
+//					public Pair<String, String> apply(Category t) {
+//						String key = t.name();
+//						return new Pair<String, String>(key, resource.getString("text.Shipment." + key));
+//					}
+//
+//				}).collect(Collectors.toList());
+//
+//		setCmFormat(tfHeigth);
+//		setCmFormat(tfLength);
+//		setCmFormat(tfWidth);
+//
+//		setGFormat(tfWeigth);
 
 	}
 
