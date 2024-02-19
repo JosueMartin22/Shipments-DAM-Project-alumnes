@@ -40,7 +40,7 @@
                   <Label styleClass="title" text="%fxml.text.formShipment.title" GridPane.columnIndex="1" />
                   <HBox spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <ComboBox fx:id="cmbCategory" disable="true" minWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="cmbCategory" editable="true" minWidth="200.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -50,7 +50,7 @@
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="tfSender" disable="true" editable="false" promptText="%fxml.text.formShipment.sender.lbl" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfSender" promptText="%fxml.text.formShipment.sender.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -60,7 +60,7 @@
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="tfRecipient" disable="true" editable="false" promptText="%fxml.text.formShipment.recipient.lbl" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfRecipient" promptText="%fxml.text.formShipment.recipient.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -70,7 +70,7 @@
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="tfWeight" disable="true" editable="false" promptText="%fxml.text.formShipment.weight.lbl" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfWeight" promptText="%fxml.text.formShipment.weight.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -80,7 +80,7 @@
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="tfHeight" disable="true" editable="false" promptText="%fxml.text.formShipment.height.lbl" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfHeight" promptText="%fxml.text.formShipment.height.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -90,7 +90,7 @@
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="tfWidth" disable="true" editable="false" promptText="%fxml.text.formShipment.width.lbl" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfWidth" promptText="%fxml.text.formShipment.width.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="4">
@@ -100,7 +100,7 @@
                               <String fx:value="label-left" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="tfLength" disable="true" editable="false" promptText="%fxml.text.formShipment.length.lbl" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="tfLength" promptText="%fxml.text.formShipment.length.lbl" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="5">

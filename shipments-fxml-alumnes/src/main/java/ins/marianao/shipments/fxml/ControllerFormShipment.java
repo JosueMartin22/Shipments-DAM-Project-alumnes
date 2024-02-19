@@ -3,7 +3,6 @@ package ins.marianao.shipments.fxml;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.function.Function;
 import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -12,7 +11,6 @@ import java.util.stream.Stream;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import cat.institutmarianao.shipmentsws.model.Shipment;
-import cat.institutmarianao.shipmentsws.model.Shipment.Category;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,9 +39,9 @@ public class ControllerFormShipment implements Initializable {
 	@FXML
 	private TextField tfRecipient;
 	@FXML
-	private TextField tfWeigth;
+	private TextField tfWeight;
 	@FXML
-	private TextField tfHeigth;
+	private TextField tfHeight;
 	@FXML
 	private TextField tfWidth;
 	@FXML
@@ -73,12 +71,19 @@ public class ControllerFormShipment implements Initializable {
 //					}
 //
 //				}).collect(Collectors.toList());
-//
-//		setCmFormat(tfHeigth);
-//		setCmFormat(tfLength);
-//		setCmFormat(tfWidth);
-//
-//		setGFormat(tfWeigth);
+
+		List<Pair<String, String>> categories = Stream.of(Shipment.Category.values())
+				.map(category -> new Pair<>(category.name(), resource.getString("text.Category." + category.name())))
+				.collect(Collectors.toList());
+
+		// Configurar el ComboBox con las categorías de envíos
+		cmbCategory.getItems().addAll(categories);
+
+		setCmFormat(tfHeight);
+		setCmFormat(tfLength);
+		setCmFormat(tfWidth);
+
+		setGFormat(tfWeight);
 
 	}
 
@@ -89,10 +94,10 @@ public class ControllerFormShipment implements Initializable {
 			String stringSender = this.tfSender.getText();
 			String stringrecipient = this.tfRecipient.getText();
 
-			float floatHeight = (float) this.tfHeigth.getTextFormatter().getValue();
+			float floatHeight = (float) this.tfHeight.getTextFormatter().getValue();
 			float floatLength = (float) this.tfLength.getTextFormatter().getValue();
 			float floatWidth = (float) this.tfWidth.getTextFormatter().getValue();
-			float floatWeigth = (float) this.tfWeigth.getTextFormatter().getValue();
+			float floatWeigth = (float) this.tfWeight.getTextFormatter().getValue();
 
 			Pair<String, String> category = this.cmbCategory.getValue();
 
@@ -158,10 +163,6 @@ public class ControllerFormShipment implements Initializable {
 //
 //		saveUser.start();
 //	}
-
-	private void loadCategories(ComboBox<String> comboBox) {
-		comboBox.getItems().addAll("Particular", "Government", "Company");
-	}
 
 	private void setCmFormat(TextField textField) {
 
