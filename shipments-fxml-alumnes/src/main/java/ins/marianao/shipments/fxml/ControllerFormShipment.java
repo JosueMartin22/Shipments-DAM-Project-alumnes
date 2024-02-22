@@ -2,6 +2,7 @@ package ins.marianao.shipments.fxml;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
@@ -20,6 +21,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Pair;
 import javafx.util.converter.IntegerStringConverter;
@@ -84,6 +86,25 @@ public class ControllerFormShipment implements Initializable {
 		setCmFormat(tfWidth);
 
 		setGFormat(tfWeight);
+
+	}
+
+	@FXML
+	public void editAddress(ActionEvent event) {
+
+		TextInputDialog dialog = new TextInputDialog("walter");
+		dialog.setTitle("Text Input Dialog");
+		dialog.setHeaderText("Look, a Text Input Dialog");
+		dialog.setContentText("Please enter your name:");
+
+		// Traditional way to get the response value.
+		Optional<String> result = dialog.showAndWait();
+		if (result.isPresent()) {
+			System.out.println("Your name: " + result.get());
+		}
+
+		// The Java 8 way to get the response value (with lambda expression).
+		result.ifPresent(name -> System.out.println("Your name: " + name));
 
 	}
 
