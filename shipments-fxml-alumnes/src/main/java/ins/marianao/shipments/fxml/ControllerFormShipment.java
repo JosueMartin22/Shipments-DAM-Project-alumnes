@@ -13,6 +13,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import cat.institutmarianao.shipmentsws.model.Shipment;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -22,6 +23,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Pair;
 import javafx.util.converter.IntegerStringConverter;
@@ -87,10 +89,21 @@ public class ControllerFormShipment implements Initializable {
 
 		setGFormat(tfWeight);
 
+		tfSender.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+
+			@Override
+
+			public void handle(MouseEvent event) {
+
+				editAddress();
+
+			}
+
+		});
+
 	}
 
-	@FXML
-	public void editAddress(ActionEvent event) {
+	public void editAddress() {
 
 		TextInputDialog dialog = new TextInputDialog("walter");
 		dialog.setTitle("Text Input Dialog");
