@@ -11,20 +11,24 @@ import java.util.stream.Stream;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
+import cat.institutmarianao.shipmentsws.model.Address;
 import cat.institutmarianao.shipmentsws.model.Shipment;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
 import javafx.util.converter.IntegerStringConverter;
 
@@ -103,22 +107,34 @@ public class ControllerFormShipment implements Initializable {
 
 	}
 
-	public void editAddress() {
+	public Address editAddress() {
 
-		TextInputDialog dialog = new TextInputDialog("walter");
+		Dialog dialog = new Dialog();
 		dialog.setTitle("Text Input Dialog");
 		dialog.setHeaderText("Look, a Text Input Dialog");
-		dialog.setContentText("Please enter your name:");
 
-		// Traditional way to get the response value.
+		GridPane grid = new GridPane();
+		grid.setHgap(10);
+		grid.setVgap(10);
+		grid.setPadding(new Insets(20, 150, 10, 10));
+
+		TextField username = new TextField();
+		username.setPromptText("Username");
+		TextField password = new TextField();
+		password.setPromptText("Password");
+
+		grid.add(new Label("Username:"), 0, 0);
+		grid.add(username, 1, 0);
+		grid.add(new Label("Password:"), 0, 1);
+		grid.add(password, 1, 1);
+
+		dialog.getDialogPane().setContent(grid);
+
 		Optional<String> result = dialog.showAndWait();
 		if (result.isPresent()) {
 			System.out.println("Your name: " + result.get());
 		}
-
-		// The Java 8 way to get the response value (with lambda expression).
-		result.ifPresent(name -> System.out.println("Your name: " + name));
-
+		return null;
 	}
 
 	@FXML
