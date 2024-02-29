@@ -17,19 +17,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Dialog;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
 import javafx.util.converter.IntegerStringConverter;
 
@@ -100,7 +96,7 @@ public class ControllerFormShipment implements Initializable {
 
 			public void handle(MouseEvent event) {
 
-				//editAddress();
+				editAddress();
 
 			}
 
@@ -108,19 +104,12 @@ public class ControllerFormShipment implements Initializable {
 
 	}
 
-//	public Address editAddress() {
-//
-//		Dialog<Address> dialog = new AddressDialog();
-//		
-//
-//		Optional<Address> result = dialog.showAndWait();
-//		
-//		if(result.isEmpty()) {
-//			Address address = result.get();
-//		}
-//		
-//		return null;
-//	}
+	public void editAddress() {
+
+		Dialog<Address> dialog = new AddressDialog(new Address());
+
+		Optional<Address> result = dialog.showAndWait();
+	}
 
 	@FXML
 	public void saveProfileClick(ActionEvent event) {
