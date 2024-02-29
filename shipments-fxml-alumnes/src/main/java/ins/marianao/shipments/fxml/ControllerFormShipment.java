@@ -23,6 +23,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
@@ -99,7 +100,7 @@ public class ControllerFormShipment implements Initializable {
 
 			public void handle(MouseEvent event) {
 
-				editAddress();
+				//editAddress();
 
 			}
 
@@ -107,35 +108,19 @@ public class ControllerFormShipment implements Initializable {
 
 	}
 
-	public Address editAddress() {
-
-		Dialog dialog = new Dialog();
-		dialog.setTitle("Text Input Dialog");
-		dialog.setHeaderText("Look, a Text Input Dialog");
-
-		GridPane grid = new GridPane();
-		grid.setHgap(10);
-		grid.setVgap(10);
-		grid.setPadding(new Insets(20, 150, 10, 10));
-
-		TextField username = new TextField();
-		username.setPromptText("Username");
-		TextField password = new TextField();
-		password.setPromptText("Password");
-
-		grid.add(new Label("Username:"), 0, 0);
-		grid.add(username, 1, 0);
-		grid.add(new Label("Password:"), 0, 1);
-		grid.add(password, 1, 1);
-
-		dialog.getDialogPane().setContent(grid);
-
-		Optional<String> result = dialog.showAndWait();
-		if (result.isPresent()) {
-			System.out.println("Your name: " + result.get());
-		}
-		return null;
-	}
+//	public Address editAddress() {
+//
+//		Dialog<Address> dialog = new AddressDialog();
+//		
+//
+//		Optional<Address> result = dialog.showAndWait();
+//		
+//		if(result.isEmpty()) {
+//			Address address = result.get();
+//		}
+//		
+//		return null;
+//	}
 
 	@FXML
 	public void saveProfileClick(ActionEvent event) {
